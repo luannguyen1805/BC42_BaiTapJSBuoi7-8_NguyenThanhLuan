@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Bài tập JavaScript buổi 7-8</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        .card-header {
+            cursor: pointer;
+        }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <h2 class="mt-4 text-center">BÀI TẬP JAVASCRIPT BUỔI 7 - 8</h2>
+    <div class="container mt-4">
+        <div class="card">
+            <div class="row justify-content-center mt-3">
+                <div class="col-4">
+                    <input type="number" class="form-control" placeholder="Nhập số n" id="numN">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-success" id="btnThemSo">Thêm số</button>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-2">
+                <div class="col-6 alert alert-success" id="result"></div>
+            </div>
+        </div>
+        <!-- 1. Tổng số dương -->
+        <div class="row mt-4">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">1. Tổng số dương</div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-5" id="btn1"> Tính Tổng </button>
+                        <div class="alert alert-success  mt-3 mb-0" id="result1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Đếm số dương -->
+        <div class="row my-3">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">2. Đếm số dương</div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-5" id="btn2"> Đếm số</button>
+                        <div class="alert alert-success  mt-3 mb-0" id="result2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Tìm số nhỏ nhất -->
+        <div class="row">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">3. Tìm số nhỏ nhất </div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-5" onclick="btn3()">Tìm số nhỏ nhất</button>
+                        <div class="alert alert-success  mt-3 mb-0" id="result3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Tìm số dương nhỏ nhất -->
+        <div class="row my-3">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">4. Tìm số dương nhỏ nhất</div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-5" id="btn4">Tìm số dương nhỏ nhất</button>
+                        <div class="alert alert-success  mt-3 mb-0" id="result4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Tìm số chẵn cuối cùng -->
+        <div class="row">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">5. Tìm số chẵn cuối cùng</div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-4" id="btn5">Tìm số chẵn</button>
+                        <div class="alert alert-success  mt-3 mb-0" id="result5"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. Đổi chỗ -->
+        <div class="row my-3">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">6. Đổi chỗ</div>
+                    <div class="card-body" style="display: none;">
+                        <div class="row justify-content-around ">
+                            <input class="col-5 form-control" placeholder="Nhập số vị trí 1" type="number" id="viTri1">
+                            <input class="col-5 form-control" placeholder="Nhập số vị trí 2" type="number" id="viTri2">
+                        </div>
+                        <button class="btn btn-primary px-5 mt-3" id="btn6">Đổi chỗ</button>
+                        <div class="alert alert-success  mt-3 mb-0" id="result6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. Sắp xếp tăng dần-->
+        <div class="row">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">7. Sắp xếp tăng dần</div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-5" id="btn7">Sắp xếp</button>
+                        <div class="alert alert-success mt-3 mb-0" id="result7"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. Tìm số nguyên tố đầu tiên-->
+        <div class="row my-3">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">8. Tìm số nguyên tố đầu tiên</div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-5" id="btn8">Tìm số nguyên tố</button>
+                        <div class="alert alert-success mt-3 mb-0" id="result8"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. Đếm số nguyên-->
+        <div class="row">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">9. Đếm số nguyên</div>
+                    <div class="card-body" style="display: none;">
+                        <div class="row justify-content-around">
+                            <input class="col-5 form-control" placeholder="Nhập số" type="number" id="txtNhapSo">
+                            <button class="btn btn-primary px-5" id="btnNhapSo">Thêm số</button>
+                        </div>
+                        <div class="alert alert-success mt-3" id="spanBai9"></div>
+                        <button class="btn btn-primary px-5 mt-3" id="btn9">Đếm số nguyên</button>
+                        <div class="alert alert-success mt-3 mb-0" id="result9"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. So sánh số lượng số âm và dương -->
+        <div class="row mt-3 mb-5">
+            <div class="col-8 mx-auto">
+                <div class="card">
+                    <div class="card-header bg-info">10. So sánh số lượng số âm và dương</div>
+                    <div class="card-body" style="display: none;">
+                        <button class="btn btn-primary px-5" id="btn10">So sánh</button>
+                        <div class="alert alert-success mt-3 mb-0" id="result10"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="./index.js"></script>
+</body>
+
+</html>
